@@ -27,6 +27,10 @@ public class ApiService {
                 .GET()
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println("DEBUG: Status /cities = " + response.statusCode());
+        System.out.println("DEBUG: Body /cities = " + response.body());
+
         return objectMapper.readValue(response.body(),
                 objectMapper.getTypeFactory().constructCollectionType(List.class, City.class));
     }
@@ -37,6 +41,10 @@ public class ApiService {
                 .GET()
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println("DEBUG: Status /passengers = " + response.statusCode());
+        System.out.println("DEBUG: Body /passengers = " + response.body());
+
         return objectMapper.readValue(response.body(),
                 objectMapper.getTypeFactory().constructCollectionType(List.class, Passenger.class));
     }
@@ -47,6 +55,10 @@ public class ApiService {
                 .GET()
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println("DEBUG: Status /airports = " + response.statusCode());
+        System.out.println("DEBUG: Body /airports = " + response.body());
+
         return objectMapper.readValue(response.body(),
                 objectMapper.getTypeFactory().constructCollectionType(List.class, Airport.class));
     }
@@ -57,6 +69,10 @@ public class ApiService {
                 .GET()
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println("DEBUG: Status /aircraft = " + response.statusCode());
+        System.out.println("DEBUG: Body /aircraft = " + response.body());
+
         return objectMapper.readValue(response.body(),
                 objectMapper.getTypeFactory().constructCollectionType(List.class, Aircraft.class));
     }
@@ -67,6 +83,10 @@ public class ApiService {
                 .GET()
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println("DEBUG: Status /cities/" + cityId + "/airports = " + response.statusCode());
+        System.out.println("DEBUG: Body /cities/" + cityId + "/airports = " + response.body());
+
         return objectMapper.readValue(response.body(),
                 objectMapper.getTypeFactory().constructCollectionType(List.class, Airport.class));
     }
@@ -77,6 +97,10 @@ public class ApiService {
                 .GET()
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
+
+        System.out.println("DEBUG: Status /aircraft/" + aircraftId + "/passengers = " + response.statusCode());
+        System.out.println("DEBUG: Body /aircraft/" + aircraftId + "/passengers = " + response.body());
+
         return objectMapper.readValue(response.body(),
                 objectMapper.getTypeFactory().constructCollectionType(List.class, Passenger.class));
     }

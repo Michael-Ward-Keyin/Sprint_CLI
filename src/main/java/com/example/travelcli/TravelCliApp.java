@@ -12,7 +12,7 @@ public class TravelCliApp {
     public static void main(String[] args) {
         HttpClient client = HttpClient.newHttpClient();
         ObjectMapper mapper = new ObjectMapper();
-        String baseUrl = "http://localhost:8080"; // Update if needed
+        String baseUrl = "http://localhost:8080"; 
 
         ApiService apiService = new ApiService(client, mapper, baseUrl);
         Scanner scanner = new Scanner(System.in);
